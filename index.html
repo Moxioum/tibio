@@ -44,9 +44,18 @@
     /* ----- HEADER ----- */
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       padding: 12px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: var(--bg);
+      border-radius: 20px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+
     }
     .logo {
       width: 64px;
@@ -85,16 +94,19 @@
       align-items: center;
       padding: 40px 0;
     }
+
     .hero-text h2 {
       font-family: 'Playfair Display', serif;
       font-size: 32px;
       margin: 0 0 10px;
       color: var(--text);
     }
+
     .hero-text p {
       color: var(--muted);
       margin-bottom: 20px;
     }
+
     .cta {
       background: var(--green);
       color: white;
@@ -227,7 +239,9 @@
     <!-- À PROPOS -->
     <section id="about">
       <h2 class="section-title">Notre histoire</h2>
-      <p style="max-width:700px;margin:10px auto;text-align:center;color:var(--muted)">Fondée par des passionnés de rhum et de nature, Ti'bio Les Arrangés est une aventure artisanale. Nous sélectionnons soigneusement nos fruits et épices pour créer des macérations authentiques et pleines de caractère.</p>
+      <p style="max-width:700px;margin:10px auto;text-align:center;color:var(--muted)">L'histoire de Ti'Bio, c'est avant tout celle d'une Mauricienne généreuse et gourmande, Marie-Irène CÉLÉRINE, une grand-mère toujours attentionnée et très bonne cuisinière. Sa cuisine familiale faite d'épices et de fruits exotiques a souvent fait le cœur des réunions de famille heureuses.
+      Le rhum macéré fait partie de ces boissons typiques que l'on retrouve à l'occasion de ces repas de partage, fait de recettes secrètes qui se transmettent de générations en générations, et dont Xavier RICCI, son petit-fils, a hérité.
+      Mais c'est aussi une enfance bercée d'histoires d'un père, Christian, né à Madagascar, faites de plages immenses, de cocotiers et de pistes en terre rouge…</p>
     </section>
 
     <!-- RECETTES -->
