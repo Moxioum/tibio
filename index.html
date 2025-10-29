@@ -110,7 +110,7 @@
       width: 100%;
       height: 340px;
       border-radius: var(--radius);
-      background-image: url('https://images.unsplash.com/photo-1601039634594-78b57b4b0f0a?q=80&w=1400&auto=format&fit=crop');
+      background-image: <url('https://images.unsplash.com/photo-1601039634594-78b57b4b0f0a?q=80&w=1400&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -164,20 +164,13 @@
       gap: 24px;
       align-items: flex-start;
       justify-content: space-between;
+      max-width: 700px;
+      margin: 10px auto;
+      text-align: center;
+      color: var(--muted);
     }
     .info { flex: 1; }
-    form {
-      flex: 1;
-      min-width: 300px;
-    }
-    input, textarea, button {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      margin-bottom: 10px;
-      font-family: inherit;
-    }
+
     button {
       background: var(--gold);
       color: white;
@@ -242,15 +235,15 @@
       <h2 class="section-title">Nos recettes</h2>
       <div class="grid-3">
         <div class="card">
-          <h3>Mangue & Vanille</h3>
+          <h3>Banane Vanille</h3>
           <p>Une alliance douce et fruitée, à savourer à tout moment.</p>
         </div>
         <div class="card">
-          <h3>Gingembre & Citron</h3>
+          <h3>Mangue Gingembre</h3>
           <p>Une explosion de fraîcheur et d’énergie.</p>
         </div>
         <div class="card">
-          <h3>Épices Créoles</h3>
+          <h3>Ti'Punch Coquin</h3>
           <p>Une macération chaleureuse et épicée, parfaite pour l’hiver.</p>
         </div>
       </div>
@@ -263,6 +256,7 @@
         <img src="img/mangue-gimgembre.png" alt="Mangue Gingembre">
         <img src="img/spicy_face-2.png" alt="Spicy">
         <img src="img/tipunch_coquin.png" alt="Tipunch Coquin">
+        <img src="img/banane_vanille.png" alt="Banane Vanille">
       </div>
     </section>
 
@@ -271,9 +265,14 @@
       <h2 class="section-title">Contact</h2>
       <div class="contact">
         <div class="info">
+          <p>Producteur expert de rhums macérés 100% Bio et issu du commerce équitable,
+            nous avons fait le choix de la haute qualité des matières premières utilisées en créant des rhums macérés haut de gamme et savoureux.
+            Producteurs de fruits, cavistes, épiceries fines, vous souhaitez créer votre rhum macéré en exclusivité ?<br>
+            Nous sommes en mesure de vous accompagner dans toutes les étapes d’élaboration. <br>
+            Vous souhaitez distribuer nos produits ?</p>
           <p><strong>Email :</strong> <a href="mailto:jy.etevenard@gmail.com" style="color:var(--green);text-decoration:none">jy.etevenard@gmail.com</a></p>
           <p><strong>Tél :</strong> <a href="tel:06.21.97.00.27" style="color:var(--green);text-decoration:none">06.21.97.00.27</a></p>
-          <p style="color:var(--muted)">Suivez-nous pour découvrir nos nouvelles créations et dégustations.</p>
+          <p>Suivez-nous pour découvrir nos nouvelles créations et dégustations.</p>
         </div>
       </div>
     </section>
