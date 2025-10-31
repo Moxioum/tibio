@@ -158,18 +158,61 @@
     }
     .card p { color: var(--muted); }
 
-    /* ----- GALERIE ----- */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .gallery img {
-      width: 100%;
-      object-fit: cover;
-      border-radius: var(--radius);
-    }
+    /* ----- CARROUSEL ----- */
+.carrousel-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 3rem auto;
+  overflow: hidden;
+}
+
+.carrousel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.4s ease;
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+.carrousel img {
+  width: 200px;
+  height: 200px; /* garde les proportions naturelles */
+  object-fit: contain;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+  background-color: var(--card);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Boutons du carrousel */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btn.prev { left: 10px; }
+.btn.next { right: 10px; }
+
+@media (max-width: 768px) {
+  .carrousel img {
+    width: 180px;
+  }
+}
 
     /* ----- CONTACT ----- */
     .contact {
@@ -224,7 +267,6 @@
       <nav>
         <a href="#about">À propos</a>
         <a href="#recettes">Recettes</a>
-        <a href="#galerie">Galerie</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -266,16 +308,22 @@
       </div>
     </section>
 
-    <!-- GALERIE -->
-    <section id="galerie">
-      <h2 class="section-title">Galerie</h2>
-      <div class="gallery">
-        <img src="img/mangue-gimgembre.png" alt="Mangue Gingembre">
-        <img src="img/spicy_face-2.png" alt="Spicy">
-        <img src="img/tipunch_coquin.png" alt="Tipunch Coquin">
-        <img src="img/banane_vanille.png" alt="Banane Vanille">
-      </div>
-    </section>
+    <!-- CARROUSEL -->
+<section id="carrousel">
+  <h2 class="section-title">Nos bouteilles</h2>
+  <div class="carrousel-container">
+    <button class="btn prev">&#10094;</button>
+    <div class="carrousel" id="carrousel-track">
+      <img src="img/banane_vanille.png" alt="Banane Vanille">
+      <img src="img/mangue-gimgembre.png" alt="Mangue Gingembre">
+      <img src="img/tipunch_coquin.png" alt="Ti'Punch Coquin">
+      <img src="img/spicy_face-2.png" alt="Spicy">
+      <img src="img/japonais.png" alt="Japonais">
+      <img src="img/celerine.png" alt="Mémé celerine">
+    </div>
+    <button class="btn next">&#10095;</button>
+  </div>
+</section>
 
     <!-- CONTACT -->
     <section id="contact">
@@ -283,9 +331,11 @@
       <div class="contact">
         <div class="info">
           <p>Producteur expert de rhums macérés 100% Bio et issu du commerce équitable,
-            nous avons fait le choix de la haute qualité des matières premières utilisées en créant des rhums macérés haut de gamme et savoureux.
+            nous avons fait le choix de la haute qualité des matières premières utilisées en créant des rhums macérés haut de gamme et savoureux. <br>
+            <br>
             Producteurs de fruits, cavistes, épiceries fines, vous souhaitez créer votre rhum macéré en exclusivité ?<br>
             Nous sommes en mesure de vous accompagner dans toutes les étapes d’élaboration. <br>
+            <br>
             Vous souhaitez distribuer nos produits ?</p>
           <p><strong>Email :</strong> <a href="mailto:jy.etevenard@gmail.com" style="color:var(--green);text-decoration:none">jy.etevenard@gmail.com</a></p>
           <p><strong>Tél :</strong> <a href="tel:06.21.97.00.27" style="color:var(--green);text-decoration:none">06.21.97.00.27</a></p>
@@ -294,5 +344,23 @@
       </div>
     </section>
   </div>
+
+  <script>
+  // Sélectionne le carrousel et les boutons
+  const carrousel = document.getElementById('carrousel-track');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  // Défilement vers la droite
+  nextBtn.addEventListener('click', () => {
+    carrousel.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+
+  // Défilement vers la gauche
+  prevBtn.addEventListener('click', () => {
+    carrousel.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+</script>
+
 </body>
 </html>
